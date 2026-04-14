@@ -3,11 +3,9 @@ services:
     image: postgres:17
     container_name: may-database
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: 123456789
     ports:
-      - "5432:5432"
+      - "7000:5432"
     volumes:
-      - may-postgres-data:/var/lib/postgresql/data
-
-volumes:
-  may-postgres-data:
+      - /home/developer/volume/may-postgres-data:/var/lib/postgresql/data
